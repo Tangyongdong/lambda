@@ -75,8 +75,8 @@ public class LambdaDemo {
 
         System.out.println("=========================================");
         userList.stream().filter(l -> l.getCity().startsWith("shang"))
-                .sorted(Comparator.comparing(c->c.getAge()))
-                .map(s -> s.getName())
+                .sorted(Comparator.comparing(User::getAge))
+                .map(User::getName)
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
