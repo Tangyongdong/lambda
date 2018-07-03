@@ -83,13 +83,6 @@ public class LambdaDemo {
         userList.parallelStream().forEach(l->{
             System.out.println(l.toString());
         });
-        int age = 0;
-        List<User> userList2 = Lists.newArrayList(userA, userB, userC, userD);
-        Map<String,Integer> maps = new HashMap<>();
-        Object[] objs = userList2.stream().map(l -> {
-            maps.put(l.getName(), age + l.getAge());
-            return l.getAge();
-        }).toArray();
 
     }
 }
