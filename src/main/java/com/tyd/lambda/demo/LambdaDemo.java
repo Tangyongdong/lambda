@@ -2,8 +2,7 @@ package com.tyd.lambda.demo;
 
 import com.google.common.collect.Lists;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -84,5 +83,13 @@ public class LambdaDemo {
         userList.parallelStream().forEach(l->{
             System.out.println(l.toString());
         });
+        int age = 0;
+        List<User> userList2 = Lists.newArrayList(userA, userB, userC, userD);
+        Map<String,Integer> maps = new HashMap<>();
+        Object[] objs = userList2.stream().map(l -> {
+            maps.put(l.getName(), age + l.getAge());
+            return l.getAge();
+        }).toArray();
+
     }
 }
